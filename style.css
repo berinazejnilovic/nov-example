@@ -38,3 +38,6 @@ footer {
     color: white;
     font-size: 20px;
 }
+tbody tr:nth-child(odd) {
+    background-color: #666;
+}
