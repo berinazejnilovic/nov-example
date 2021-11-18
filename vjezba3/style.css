@@ -1,0 +1,146 @@
+body {
+    background-color: aquamarine;
+}
+
+.box{
+    background-color: green;
+    border-radius: 6px;
+    cursor: pointer;
+    height: 95px;
+    width: 95px;
+    line-height: 95px;
+    text-align: center;
+    /*-webkit-transition-property: background;
+       -moz-transition-property: background;
+         -o-transition-property: background;
+            transition-property: background;
+
+    -webkit-transition-duration: .2s, 1s;
+       -moz-transition-duration: .2s, 1s;
+         -o-transition-duration: .2s, 1s;
+            transition-duration: .2s, 1s;
+
+    -webkit-transition-timing-function: linear, ease-in;
+       -moz-transition-timing-function: linear, ease-in;
+         -o-transition-timing-function: linear, ease-in;
+            transition-timing-function: linear, ease-in;
+
+    transition-delay: 1s, 2s;
+    shorthand transitions*/
+    -webkit-transition: background .2s linear, border-radius 1s ease-in 1s;
+       -moz-transition: background .2s linear, border-radius 1s ease-in 1s;
+         -o-transition: background .2s linear, border-radius 1s ease-in 1s;
+            transition: background .2s linear, border-radius 1s ease-in 1s;
+}
+
+.box:hover {
+    background: orange;
+    border-radius: 50%;
+}
+
+.custom-button {
+    border: 0;
+    background-color: lightskyblue;
+    border-radius: 4px;
+    box-shadow: 0 5px 0 blue;
+    color: white;
+    cursor: pointer;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 12px 20px;
+    transition: all .1s linear;
+}
+
+.custom-button:active {
+    box-shadow: 0 2px 0 blue;
+    transform: translateY(3px)
+}
+
+.card-container {
+    cursor:pointer;
+    height: 150px;
+    width: 150px;
+    perspective: 600;
+    position: relative;
+}
+
+.card {
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: all 1s ease-in-out;
+    width: 100%;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
+
+.card .side {
+    backface-visibility: hidden;
+    border-radius: 6px;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+}
+
+.card .back {
+    background: lightgrey;
+    color: seagreen;
+    line-height: 150px;
+    text-align: center;
+    transform: rotateY(180deg);
+}
+
+@keyframes slide {
+     0% {
+        left: 0;
+        top: 0;
+     }
+     50% {
+        left: 244px;
+        top: 100px;
+     }
+     100% {
+        left: 488px;
+        top: 0;
+     }
+}
+
+.stage {
+    background-color: beige;
+    border-radius: 6px;
+    height: 150px;
+    position: relative;
+    min-width: 600px;
+}
+
+/*.stage:hover .ball {
+    animation: slide 2s linear;
+}*/
+
+.ball {
+    background-color: lightseagreen;
+    border-radius: 50%;
+    height: 50px;
+    position: absolute;
+    width: 50px;
+}
+
+/*.stage:hover .ball {
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.5s;
+    animation-iteration-count: infinite;
+}*/
+
+.stage:hover .ball {
+    animation: slide 2s ease-in-out .5s infinite alternate;
+}
+
+.stage:active .ball {
+    animation-play-state: paused;
+}
